@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>_1st_lab_kop_winForms</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="1st_lab_kop">
+      <HintPath>..\..\1st_lab_kop\1st_lab_kop\bin\Debug\net5.0-windows\1st_lab_kop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
