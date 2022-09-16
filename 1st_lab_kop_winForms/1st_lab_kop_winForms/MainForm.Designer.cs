@@ -33,6 +33,7 @@ namespace _1st_lab_kop_winForms
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -59,7 +60,7 @@ namespace _1st_lab_kop_winForms
             // 
             this.button3.Location = new System.Drawing.Point(290, 415);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(153, 23);
+            this.button3.Size = new System.Drawing.Size(133, 23);
             this.button3.TabIndex = 2;
             this.button3.Text = "Выделить по индексу";
             this.button3.UseVisualStyleBackColor = true;
@@ -67,7 +68,7 @@ namespace _1st_lab_kop_winForms
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(449, 415);
+            this.button4.Location = new System.Drawing.Point(429, 415);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(191, 23);
             this.button4.TabIndex = 3;
@@ -75,11 +76,22 @@ namespace _1st_lab_kop_winForms
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(626, 415);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(84, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "SetListObj";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(812, 450);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -97,6 +109,7 @@ namespace _1st_lab_kop_winForms
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button6;
     }
 }
 

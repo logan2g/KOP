@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>_2nd_lab_kop_winForms</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PDFsharp-MigraDoc-GDI" Version="1.51.5186-beta" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0-rc.1.22426.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="2nd_lab_kop">
+      <HintPath>..\..\2nd_lab_kop\2nd_lab_kop\bin\Debug\net5.0-windows\2nd_lab_kop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

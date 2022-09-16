@@ -15,9 +15,9 @@ namespace _1st_lab_kop
         {
             set
             {
-                if (listBox.SelectedIndex > -1)
+                if (listBox.Items.Contains(value))
                 {
-                    listBox.Items[listBox.SelectedIndex] = value;
+                    listBox.SelectedIndex = listBox.Items.IndexOf(value);
                 }
             }
             get

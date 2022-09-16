@@ -35,6 +35,13 @@ namespace _1st_lab_kop
             }
             set
             {
+                if (value == null)
+                {
+                    checkBox.Checked = true;
+                    textBox.Text = "";
+                    return;
+                }
+                checkBox.Checked = false;
                 textBox.Text = value.ToString();
             }
         }

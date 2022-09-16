@@ -14,26 +14,30 @@ namespace _1st_lab_kop
 
         private List<string> fields;
 
-        public void ConfigureGrid(int nColumns, List<string> headers, List<int> width, 
-            List<bool> visible, List<string> fieldName)
+        public void ConfigureGrid(List<GridColumnConfig> columns)
         {
-            if (nColumns != headers.Count || nColumns != width.Count || nColumns != visible.Count || nColumns != fieldName.Count)
+            if (columns == null)
             {
-                throw new Exception("Ошибка во входных данных! Проверьте количество и указанные данные для списков");
+                throw new Exception("Входной список не имеет значения. Проверьте данные для списка!");
             }
-            for (int i = 0; i < nColumns; i++)
+            if (columns.Count > 0)
             {
-                var column = new DataGridViewTextBoxColumn
+                throw new Exception("Входной список пуст. Проверьте данные для списка!");
+            }
+            fields = new List<string>();
+            foreach(var column in columns)
+            { 
+                var columnToAdd = new DataGridViewTextBoxColumn
                 {
-                    Name = fieldName[i],
+                    Name = column.FieldName,
                     ReadOnly = true,
-                    HeaderText = headers[i],
-                    Visible = visible[i],
-                    Width = width[i]
+                    HeaderText = column.Header,
+                    Visible = column.Visible,
+                    Width = column.Width
                 };
-                dataGridView.Columns.Add(column);
+                fields.Add(column.FieldName);
+                dataGridView.Columns.Add(columnToAdd);
             }
-            fields = fieldName;
         }
 
         public void InsertData<T>(List<T> data)
