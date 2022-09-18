@@ -30,23 +30,35 @@ namespace _2nd_lab_kop_winForms
         private void InitializeComponent()
         {
             this.buttonSavePdf = new System.Windows.Forms.Button();
+            this.buttonSavePdfWithHeaders = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSavePdf
             // 
             this.buttonSavePdf.Location = new System.Drawing.Point(13, 13);
             this.buttonSavePdf.Name = "buttonSavePdf";
-            this.buttonSavePdf.Size = new System.Drawing.Size(178, 23);
+            this.buttonSavePdf.Size = new System.Drawing.Size(190, 23);
             this.buttonSavePdf.TabIndex = 0;
             this.buttonSavePdf.Text = "Сохранить пробный набор";
             this.buttonSavePdf.UseVisualStyleBackColor = true;
             this.buttonSavePdf.Click += new System.EventHandler(this.buttonSavePdf_Click);
+            // 
+            // buttonSavePdfWithHeaders
+            // 
+            this.buttonSavePdfWithHeaders.Location = new System.Drawing.Point(13, 43);
+            this.buttonSavePdfWithHeaders.Name = "buttonSavePdfWithHeaders";
+            this.buttonSavePdfWithHeaders.Size = new System.Drawing.Size(190, 23);
+            this.buttonSavePdfWithHeaders.TabIndex = 1;
+            this.buttonSavePdfWithHeaders.Text = "Сохранить набор с зголовками";
+            this.buttonSavePdfWithHeaders.UseVisualStyleBackColor = true;
+            this.buttonSavePdfWithHeaders.Click += new System.EventHandler(this.buttonSavePdfWithHeaders_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonSavePdfWithHeaders);
             this.Controls.Add(this.buttonSavePdf);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -57,6 +69,7 @@ namespace _2nd_lab_kop_winForms
         #endregion
 
         private System.Windows.Forms.Button buttonSavePdf;
+        private System.Windows.Forms.Button buttonSavePdfWithHeaders;
     }
 }
 

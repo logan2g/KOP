@@ -23,14 +23,6 @@ namespace _2nd_lab_kop
             style.Font.Bold = true;
         }
 
-        protected void CreateParagraph(string text)
-        {
-            var paragraph = _section.AddParagraph(text);
-            paragraph.Format.SpaceAfter = "1cm";
-            paragraph.Format.Alignment = ParagraphAlignment.Center;
-            paragraph.Style = "NormalTitle";
-        }
-
         public void CreatePdf(string filename, string title, List<string[][]> data)
         {
             if (string.IsNullOrEmpty(filename) || string.IsNullOrEmpty(title) || data.Count == 0)
@@ -42,10 +34,14 @@ namespace _2nd_lab_kop
             DefineStyles(_document);
             _section = _document.AddSection();
 
-            CreateParagraph(title);
+            var paragraph = _section.AddParagraph(title);
+            paragraph.Format.SpaceAfter = "1cm";
+            paragraph.Format.Alignment = ParagraphAlignment.Center;
+            paragraph.Style = "NormalTitle";
+
             foreach(var table in data)
             {
-                _table = _document.LastSection.AddTable();
+                    
 
                 for(int i = 0; i < table[0].Length; i++)
                 {
@@ -66,7 +62,7 @@ namespace _2nd_lab_kop
             renderer.PdfDocument.Save(filename);
         }
 
-        protected void CreateRow(string[] text)
+        private void CreateRow(string[] text)
         {
             var row = _table.AddRow();
             for (int i = 0; i < text.Length; ++i)
