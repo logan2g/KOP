@@ -14,7 +14,7 @@ namespace _2nd_lab_kop
 
         private Table _table;
 
-        private static void DefineStyles(Document document)
+        internal static void DefineStyles(Document document)
         {
             var style = document.Styles["Normal"];
             style.Font.Name = "Times New Roman";

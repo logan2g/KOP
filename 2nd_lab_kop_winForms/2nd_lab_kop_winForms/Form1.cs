@@ -143,5 +143,23 @@ namespace _2nd_lab_kop_winForms
                 }
             }
         }
+
+        private void buttonChart_Click(object sender, EventArgs e)
+        {
+            SavePdfWithPlot pdf = new SavePdfWithPlot();
+            SaveFileDialog dialog = new SaveFileDialog { Filter = "pdf|*.pdf" };
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pdf.CreatePdf(dialog.FileName, "Заголовок", "Гистограмма 1", _2nd_lab_kop.LegendPostion.Left,
+                        "Серия 1", new double[] { 1, 3.4, 5, 8, 9.3});
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

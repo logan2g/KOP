@@ -2,7 +2,6 @@
 using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.Rendering;
 using System.Collections.Generic;
-using System.Reflection;
 using System;
 
 namespace _2nd_lab_kop
@@ -15,15 +14,6 @@ namespace _2nd_lab_kop
 
         private Table _table;
 
-        private static void DefineStyles(Document document)
-        {
-            var style = document.Styles["Normal"];
-            style.Font.Name = "Times New Roman";
-            style.Font.Size = 14;
-            style = document.Styles.AddStyle("NormalTitle", "Normal");
-            style.Font.Bold = true;
-        }
-
         public void CreatePdf<T>(string filename, string title, List<string> width, List<string> height, List<Tuple<string, string>> header, List<T> data)
         {
             if (string.IsNullOrEmpty(filename) || string.IsNullOrEmpty(title) || data.Count == 0 
@@ -32,7 +22,7 @@ namespace _2nd_lab_kop
                 throw new Exception("Некорректные входные данные!");
             }
             _document = new Document();
-            DefineStyles(_document);
+            SavePdfWithSimpleTable.DefineStyles(_document);
             _section = _document.AddSection();
 
             var paragraph = _section.AddParagraph(title);
@@ -98,15 +88,6 @@ namespace _2nd_lab_kop
             };
             renderer.RenderDocument();
             renderer.PdfDocument.Save(filename);
-        }
-
-        private Paragraph InsertCell(string text, string style)
-        {
-            Paragraph paragraph = new Paragraph();
-            paragraph.AddText(text);
-            paragraph.Format.Alignment = ParagraphAlignment.Center;
-            paragraph.Style = style;
-            return paragraph;
         }
     }
 }

@@ -31,6 +31,7 @@ namespace _2nd_lab_kop_winForms
         {
             this.buttonSavePdf = new System.Windows.Forms.Button();
             this.buttonSavePdfWithHeaders = new System.Windows.Forms.Button();
+            this.buttonChart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSavePdf
@@ -53,11 +54,22 @@ namespace _2nd_lab_kop_winForms
             this.buttonSavePdfWithHeaders.UseVisualStyleBackColor = true;
             this.buttonSavePdfWithHeaders.Click += new System.EventHandler(this.buttonSavePdfWithHeaders_Click);
             // 
+            // buttonChart
+            // 
+            this.buttonChart.Location = new System.Drawing.Point(13, 72);
+            this.buttonChart.Name = "buttonChart";
+            this.buttonChart.Size = new System.Drawing.Size(190, 23);
+            this.buttonChart.TabIndex = 2;
+            this.buttonChart.Text = "График";
+            this.buttonChart.UseVisualStyleBackColor = true;
+            this.buttonChart.Click += new System.EventHandler(this.buttonChart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonChart);
             this.Controls.Add(this.buttonSavePdfWithHeaders);
             this.Controls.Add(this.buttonSavePdf);
             this.Name = "Form1";
@@ -70,6 +82,7 @@ namespace _2nd_lab_kop_winForms
 
         private System.Windows.Forms.Button buttonSavePdf;
         private System.Windows.Forms.Button buttonSavePdfWithHeaders;
+        private System.Windows.Forms.Button buttonChart;
     }
 }
 
