@@ -39,10 +39,10 @@ namespace _2nd_lab_kop
             paragraph.Format.Alignment = ParagraphAlignment.Center;
             paragraph.Style = "NormalTitle";
 
+            _table = _document.LastSection.AddTable();
+
             foreach(var table in data)
             {
-                    
-
                 for(int i = 0; i < table[0].Length; i++)
                 {
                     _table.AddColumn("3cm");
